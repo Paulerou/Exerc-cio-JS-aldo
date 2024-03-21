@@ -1,0 +1,511 @@
+----1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alterar Cor de Fundo</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<button onclick="changeBackgroundColor('red')">Vermelho</button>
+<button onclick="changeBackgroundColor('green')">Verde</button>
+<button onclick="changeBackgroundColor('blue')">Azul</button>
+<button onclick="changeBackgroundColor('yellow')">Amarelo</button>
+
+<script>
+    function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+</script>
+
+</body>
+</html>
+
+
+
+---2 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alterar Cor de Fundo</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #colors-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .color-link {
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+</head>
+<body>
+
+<div id="colors-container">
+    <a href="#" class="color-link" onmouseover="changeBackgroundColor('red')">Vermelho</a>
+    <a href="#" class="color-link" onmouseover="changeBackgroundColor('green')">Verde</a>
+    <a href="#" class="color-link" onmouseover="changeBackgroundColor('blue')">Azul</a>
+    <a href="#" class="color-link" onmouseover="changeBackgroundColor('yellow')">Amarelo</a>
+</div>
+
+<script>
+    function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+</script>
+
+</body>
+</html>
+
+
+
+---3 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selecionar Cor de Fundo</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    select {
+        padding: 10px;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+
+<select id="color-select" onchange="changeBackgroundColor()">
+    <option value="red">Vermelho</option>
+    <option value="green">Verde</option>
+    <option value="blue">Azul</option>
+    <option value="yellow">Amarelo</option>
+</select>
+
+<script>
+    function changeBackgroundColor() {
+        var selectElement = document.getElementById("color-select");
+        var selectedColor = selectElement.options[selectElement.selectedIndex].value;
+        document.body.style.backgroundColor = selectedColor;
+    }
+</script>
+
+</body>
+</html>
+
+
+--4
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocultar/Mostrar Parágrafo</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #paragraph {
+        display: block;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<p id="paragraph">Este é um parágrafo que pode ser ocultado/mostrado.</p>
+<button onclick="toggleParagraph()">Ocultar/Mostrar</button>
+
+<script>
+    function toggleParagraph() {
+        var paragraph = document.getElementById("paragraph");
+        if (paragraph.style.display === "none") {
+            paragraph.style.display = "block";
+        } else {
+            paragraph.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+---5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Usuário</title>
+</head>
+<body>
+
+<h2>Cadastro de Usuário</h2>
+<form id="registration-form" onsubmit="return validateForm()">
+    <label for="login">Login:</label>
+    <input type="text" id="login" name="login" required><br><br>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="confirm-password">Confirmar Senha:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+
+    <input type="submit" value="Cadastrar">
+</form>
+
+<script>
+    function validateForm() {
+        var login = document.getElementById("login").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+
+        if (login === "" || password === "" || confirmPassword === "") {
+            alert("Por favor, preencha todos os campos.");
+            return false;
+        }
+
+        if (password.length < 6 || password.length > 10) {
+            alert("A senha deve ter entre 6 e 10 caracteres.");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("As senhas digitadas não são iguais.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</body>
+</html>
+
+
+---6
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar Palíndromo</title>
+</head>
+<body>
+
+<h2>Verificar Palíndromo</h2>
+<label for="word">Digite uma palavra:</label>
+<input type="text" id="word" name="word">
+<button onclick="checkPalindrome()">Verificar</button>
+<p id="result"></p>
+
+<script>
+    function checkPalindrome() {
+        var word = document.getElementById("word").value.toLowerCase();
+        var reversedWord = word.split('').reverse().join('');
+        
+        if (word === reversedWord) {
+            document.getElementById("result").innerText = "'" + word + "' é um palíndromo.";
+        } else {
+            document.getElementById("result").innerText = "'" + word + "' não é um palíndromo.";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+---7
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inverter Nomes</title>
+</head>
+<body>
+
+<h2>Insira os nomes das pessoas</h2>
+<form id="names-form">
+    <label for="name1">Nome 1:</label>
+    <input type="text" id="name1" name="name1" required><br><br>
+
+    <label for="name2">Nome 2:</label>
+    <input type="text" id="name2" name="name2" required><br><br>
+
+    <label for="name3">Nome 3:</label>
+    <input type="text" id="name3" name="name3" required><br><br>
+
+    <label for="name4">Nome 4:</label>
+    <input type="text" id="name4" name="name4" required><br><br>
+
+    <label for="name5">Nome 5:</label>
+    <input type="text" id="name5" name="name5" required><br><br>
+
+    <button type="button" onclick="invertNames()">Inverter</button>
+</form>
+
+<script>
+    function invertNames() {
+        var namesArray = [];
+        var form = document.getElementById("names-form");
+
+        for (var i = 0; i < form.elements.length - 1; i++) {
+            namesArray.push(form.elements[i].value);
+        }
+
+        namesArray.reverse();
+
+        for (var i = 0; i < form.elements.length - 1; i++) {
+            form.elements[i].value = namesArray[i];
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+---8
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Cliente</title>
+</head>
+<body>
+
+<h2>Cadastro de Cliente</h2>
+<form id="client-form">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="person-type">Pessoa:</label>
+    <label><input type="radio" name="person-type" value="fisica" onclick="toggleCPF()"> Física</label>
+    <label><input type="radio" name="person-type" value="juridica" onclick="toggleCNPJ()"> Jurídica</label><br><br>
+
+    <label for="cpf" id="cpf-label" style="display:none;">CPF:</label>
+    <input type="text" id="cpf" name="cpf" style="display:none;"><br><br>
+
+    <label for="cnpj" id="cnpj-label" style="display:none;">CNPJ:</label>
+    <input type="text" id="cnpj" name="cnpj" style="display:none;"><br><br>
+
+    <label for="birthdate" id="birthdate-label" style="display:none;">Data de Nascimento:</label>
+    <input type="date" id="birthdate" name="birthdate" style="display:none;"><br><br>
+
+    <label for="address">Endereço:</label>
+    <input type="text" id="address" name="address" required><br><br>
+
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{3}" required><br><br>
+
+    <label for="phone">Telefone:</label>
+    <input type="text" id="phone" name="phone" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <input type="submit" value="Cadastrar">
+</form>
+
+<script>
+    function toggleCPF() {
+        var cpfLabel = document.getElementById("cpf-label");
+        var cpfInput = document.getElementById("cpf");
+
+        cpfLabel.style.display = "block";
+        cpfInput.style.display = "block";
+        
+        var cnpjLabel = document.getElementById("cnpj-label");
+        var cnpjInput = document.getElementById("cnpj");
+
+        cnpjLabel.style.display = "none";
+        cnpjInput.style.display = "none";
+
+        var birthdateLabel = document.getElementById("birthdate-label");
+        var birthdateInput = document.getElementById("birthdate");
+
+        birthdateLabel.style.display = "block";
+        birthdateInput.style.display = "block";
+    }
+
+    function toggleCNPJ() {
+        var cnpjLabel = document.getElementById("cnpj-label");
+        var cnpjInput = document.getElementById("cnpj");
+
+        cnpjLabel.style.display = "block";
+        cnpjInput.style.display = "block";
+        
+        var cpfLabel = document.getElementById("cpf-label");
+        var cpfInput = document.getElementById("cpf");
+
+        cpfLabel.style.display = "none";
+        cpfInput.style.display = "none";
+
+        var birthdateLabel = document.getElementById("birthdate-label");
+        var birthdateInput = document.getElementById("birthdate");
+
+        birthdateLabel.style.display = "none";
+        birthdateInput.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
+
+---9
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palavras Intercaladas</title>
+</head>
+<body>
+
+<h2>Palavras Intercaladas</h2>
+<form id="words-form">
+    <label for="word1">Palavra 1:</label>
+    <input type="text" id="word1" name="word1" required><br><br>
+
+    <label for="word2">Palavra 2:</label>
+    <input type="text" id="word2" name="word2" required><br><br>
+
+    <label for="intercalated" style="display:none;">Palavras Intercaladas:</label>
+    <input type="text" id="intercalated" name="intercalated" disabled style="display:none;"><br><br>
+
+    <button type="button" onclick="intercalateWords()">Intercalar</button>
+</form>
+
+<script>
+    function intercalateWords() {
+        var word1 = document.getElementById("word1").value;
+        var word2 = document.getElementById("word2").value;
+        var intercalated = intercalate(word1, word2);
+        document.getElementById("intercalated").value = intercalated;
+        document.getElementById("intercalated").style.display = "block";
+        document.getElementById("intercalated").disabled = true;
+        document.querySelector("label[for='intercalated']").style.display = "block";
+    }
+
+    function intercalate(word1, word2) {
+        var result = '';
+        var maxLength = Math.max(word1.length, word2.length);
+
+        for (var i = 0; i < maxLength; i++) {
+            if (i < word1.length) {
+                result += word1[i];
+            }
+            if (i < word2.length) {
+                result += word2[i];
+            }
+        }
+
+        return result;
+    }
+</script>
+
+</body>
+</html>
+
+
+---10
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operações com Números</title>
+</head>
+<body>
+
+<h2>Operações com Números</h2>
+<form id="numbers-form">
+    <label for="number1">Número 1:</label>
+    <input type="number" id="number1" name="number1" required><br><br>
+
+    <label for="number2">Número 2:</label>
+    <input type="number" id="number2" name="number2" required><br><br>
+
+    <label for="number3">Número 3:</label>
+    <input type="number" id="number3" name="number3" required><br><br>
+
+    <button type="button" onclick="calculate()">Calcular</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+    function calculate() {
+        var number1 = parseFloat(document.getElementById("number1").value);
+        var number2 = parseFloat(document.getElementById("number2").value);
+        var number3 = parseFloat(document.getElementById("number3").value);
+
+        var sum = number1 + number2 + number3;
+        var difference = number1 - number2 - number3;
+        var product = number1 * number2 * number3;
+
+        document.getElementById("result").innerHTML = "Soma: " + sum + "<br>" +
+                                                      "Subtração: " + difference + "<br>" +
+                                                      "Multiplicação: " + product;
+    }
+</script>
+
+</body>
+</html>
